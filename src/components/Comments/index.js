@@ -1,7 +1,7 @@
 import {Component} from 'react'
-import './index.css'
 import {v4 as uuidv4} from 'uuid'
-import '../CommentItem'
+import './index.css'
+import CommentItem from '../CommentItem'
 
 const initialContainerBackgroundClassNames = [
   'amber',
@@ -27,7 +27,9 @@ class Comments extends Component {
   }
 
   submitForm = event => {
+    console.log('bheem1')
     event.preventDefault()
+
     const {nameInput, commentText} = this.state
 
     const newComment = {
@@ -47,6 +49,7 @@ class Comments extends Component {
 
   render() {
     const {commentList, nameInput, commentText} = this.state
+    console.log(commentList)
     return (
       <div className="container1">
         <h1>Comments</h1>
@@ -88,7 +91,7 @@ class Comments extends Component {
           <span className="spanItem">{commentList.length}</span> Comments
         </p>
         {commentList.map(each => (
-          <commentItem key={each.id} itemDetails={each} />
+          <CommentItem key={each.id} itemDetails={each} />
         ))}
       </div>
     )

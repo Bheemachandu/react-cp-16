@@ -1,5 +1,13 @@
 import './index.css'
 
-const commentItem = () => <h1>name</h1>
+const CommentItem = props => {
+  const {itemDetails} = props
+  const {name, comment, date, isLiked} = itemDetails
+  return (
+    <h1>
+      {name},{comment},{date},{isLiked}
+    </h1>
+  )
+}
 
-export default commentItem
+export default CommentItem
